@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Dice Game</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Dice Game</h1>
+        <div class="player" id="player1">
+            <h2>Player 1</h2>
+            <p>Score: <span id="score1"></span></p>
+            <button id="roll1" onclick="rollDice(1)">Roll Dice</button>
+        </div>
+        <div class="player" id="player2">
+            <h2>Player 2</h2>
+            <p>Score: <span id="score2"></span></p>
+            <button id="roll2" onclick="rollDice(2)">Roll Dice</button>
+        </div>
+        <div id="result"></div>
+        <button id="reset" onclick="resetGame()" disabled>Reset Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
