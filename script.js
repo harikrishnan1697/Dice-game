@@ -1,20 +1,27 @@
-let currentPlayer = Math.random() < 0.5 ? 1 : 2;
+let currentPlayer = Math.random()*2;
 let score1 = 0;
 let score2 = 0;
 let gameOver = false;
+//  const diceValues = ["./image/dice-six-faces-one.png","./image/dice-six-faces-two.png","./image/dice-six-faces-three.png","./image/dice-six-faces-four.png","./image/dice-six-faces-five.png","./image/dice-six-faces-six.png"];
+
 
 function rollDice(player) {
     if (gameOver) return;
 
-    const diceResult = Math.floor(Math.random() * 6) + 1;
+     const diceResult = Math.floor(Math.random() * 6) + 1;
     const scoreSpan = document.getElementById(`score${player}`);
-    const rollButton = document.getElementById(`roll${player}`);
+     const rollButton = document.getElementById(`roll${player}`);
+     const activeplayer= document.getElementById("Activeplayer")
 
     scoreSpan.textContent = (player === 1 ? score1 : score2) + diceResult;
     if (player === 1) {
         score1 += diceResult;
+         activeplayer.innerText="Player2 to play"
+        
     } else {
         score2 += diceResult;
+        activeplayer.innerText="Player1 to play"
+
     }
 
     if (score1 >= 30) {
